@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mark's BMI</h1>
+    <input id = 'mass1' type="number">
+    <input id = 'height1' type="number">
+    <h1>Join BMI</h1>
+    <input id = 'mass2' type="number">
+    <input id = 'height2' type="number">
+    <button id='click'>click</button>
+    <script>
+        var button= document.getElementById('click')
+        var markHigherBMI = false
+        button.onclick = () =>{
+            mass1 = document.getElementById('mass1').value
+            height1 = document.getElementById('height1').value
+            console.log(mass1,height1);
+            BMI1 = mass1 / (height1 * height1)
+            console.log(BMI1);
+
+            mass2 = document.getElementById('mass2').value
+            height2 = document.getElementById('height2').value
+            console.log(mass2,height2);
+            BMI2 = mass2 / (height2 * height2)
+            console.log(BMI2);
+            
+            if (BMI1 > BMI2) {
+                console.log("Mark's BMI > Join BMI");
+                markHigherBMI = true
+            } else if(BMI1 < BMI2){
+                console.log("Mark's BMI < Join BMI");
+                markHigherBMI = false
+            }
+            console.log(markHigherBMI);
+            
+        }
+    </script>
+</body>
+</html>
