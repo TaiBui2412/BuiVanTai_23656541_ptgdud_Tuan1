@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dolphins score</h1>
+    <input id = 'DScore1' type="number">
+    <input id = 'DScore2' type="number">
+    <input id = 'DScore3' type="number">
+    <h1>Koalas score</h1>
+    <input id = 'KScore1' type="number">
+    <input id = 'KScore2' type="number">
+    <input id = 'KScore3' type="number">
+    <button id='click'>click</button>
+    <script>
+        var button= document.getElementById('click')
+        button.onclick = () =>{
+            DScore1 = Number(document.getElementById('DScore1').value)
+            DScore2 = Number(document.getElementById('DScore2').value)
+            DScore3 = Number(document.getElementById('DScore3').value)
+            avrD = (DScore1 + DScore2 + DScore3)/3
+            console.log('Dophin score : ' + avrD);
+
+            KScore1 = Number(document.getElementById('KScore1').value)
+            KScore2 = Number(document.getElementById('KScore2').value)
+            KScore3 = Number(document.getElementById('KScore3').value)
+            
+            avrK = (KScore1 + KScore2 + KScore3)/3
+            console.log('Koala score : ' + avrK);
+            
+            if(avrK > avrD && avrK >= 100){
+                console.log("Koala win : " + avrK);
+            } else if(avrK < avrD && avrD >= 100){
+                console.log("Dophin win : " + avrD);
+            } else if(avrK < 100 && avrK < 100){
+                console.log("khong thang");
+            } else {
+                console.log("hoa");
+            }
+        }
+    </script>
+</body>
+</html>
