@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id='click'>click</button>
+    <script>
+        var Mark = {name : 'Mark Miller', mass: 78, height : 1.96}
+        var John = {name : 'John Smith', mass: 92, height : 1.95}
+        var button= document.getElementById('click')
+        button.onclick = () =>{
+            var BMI1 = calcsBMI(Mark.mass, Mark.height)
+            console.log("Mark's mass : " + Mark.mass +"  Mark's height : " + Mark.height + ' Mark BMI : ' + BMI1);
+            var BMI2 = calcsBMI(John.mass, John.height)
+            console.log("John's mass : " + John.mass +"  John's height : " + John.height + ' John BMI : ' + BMI2);
+            
+            if (BMI1 > BMI2) {
+                console.log("Mark's BMI : " + BMI1 +" > John BMI : " + BMI2);
+                markHigherBMI = true
+            } else if(BMI1 < BMI2){
+                console.log("Mark's BMI : " + BMI1 +" < John BMI : " + BMI2);
+                markHigherBMI = false
+            }
+        }
+        calcsBMI = (mass, height) => {
+                return (mass / (height*height)).toFixed(1)
+            }
+    </script>
+</body>
+</html>
