@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click">click</button>
+    <script>
+      var button = document.getElementById("click");
+      button.onclick = () => {
+        var bills = [125, 555, 44];
+        var tips = calTip(bills);
+
+        for (index = 0; index < bills.length; index++) {
+          console.log(
+            "bill : " +
+              bills[index] +
+              " tip : " +
+              tips[index] +
+              " total : " +
+              (bills[index] + tips[index])
+          );
+        }
+      };
+      var calTip = (bills) => {
+          var tips = [];
+          for (index = 0; index < bills.length; index++) {
+            tips[index] =
+              bills[index] >= 50 && bills[index] <= 300
+                ? bills[index] * 0.15
+                : bills[index] * 0.2;
+          }
+          return tips;
+        };
+    </script>
+  </body>
+</html>
